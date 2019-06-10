@@ -36,6 +36,18 @@
 			
 
 <div class="container text-left bg-light">
+<p>
+Every C program you run will have a <code>main()</code> function, which will look something like:
+<pre style="text-align: left; font-size: 15px"><code><div class="container">int main(void){
+    // more code here
+    return 0;
+}
+</div></code></pre>
+
+Everything inside the curly braces <code>{ }</code> is in the main function. To make it easier to read, every time we come across a pair of curly braces all the code inside is indented.
+</p><p>
+Another thing your code should always have is comment. Each file should have a comment up the top with who wrote it, the date and what the code in that file does. As your code becomes more complex you will also want to write comments as you go.
+</p>
 
 <div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
 <div class="container d-flex justify-content-between">
@@ -59,6 +71,10 @@ int main(void) {
     return 0;
 }
 </div></code></pre>
+
+<p>
+<code>printf()</code> stands for "print formatted", and is how we output text in C. Note here the special character <code>\n</code>, which is a newline. You can open the manual page for <code>printf</code> by writing <code>man printf</code> in your terminal to see other special characters in C. These are called escape sequences, and backslash <code>\</code> is the escape character.
+</p>
 
 </div>
 

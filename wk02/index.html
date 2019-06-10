@@ -1,70 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>COMP1511 19t2 wk02</title>
+<head>
+<meta charset="utf-8">
+<title>COMP1511 19t2 wk02</title>
 
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-			crossorigin="anonymous">
-    	<!-- Custom styles for this template -->
-    	<link href="album.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    	<!-- Syntax higlighting -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad()</script>  
+<!-- Custom styles for this template -->
+<link href="album.css" rel="stylesheet">
+
+<!-- Syntax higlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>  
+
+</head>
+
+<body>
+
+<!--  -->
+<div class="navbar navbar-dark bg-dark box-shadow">
+<div class="container d-flex justify-content-between">
+<a href="#" class="navbar-brand d-flex align-items-center">
+<strong>19t2</strong>
+</a>
+</div>
+</div>
+
+<main role="main">
+
+<div class="jumbotron text-center">
+<div class="container">
+<h1 class="jumbotron-heading">Week 2</h1>
+			
+
+<div class="container text-left bg-light">
+
+<br><h4><code>if</code> statements</h4>
+<pre style="text-align: left; font-size: 15px"><code><div class="container">if(/*some boolean statement*/){
+    // everything inside these curly braces will only
+    // be run if the statement is evaluated as true
+}
+</div></code></pre>
+
+<p>
+You can also chain many if statements together using <code>else if()</code>. The actions inside will be mutually exclusive, once a condition is found to be true it will execute everything inside that set of curly braces and then skip the rest of the chain.
+</p>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">if(...){
+    // since we have another set of curly braces
+    // everything inside here is indented once more
+} else if(...){
+    // you can have as many else if's as you like
+    // the "else" chains it on to the if before
+} else if(...){
+    ...
+} else {
+    // you should always end on an "else" statement
+}
+</div></code></pre>
 
 
-	</head>
 
-	<body>
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">pass_fail.c</strong>
+<a href="pass_fail.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a>
+</div>
+</div>
 
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>19t2</strong>
-          </a>
-        </div>
-      </div>
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: Wed09Sitar and Wed13Kora
+// Date created: 11-06-2019
+// Reads in a mark and then prints pass or fail
 
-	<main role="main">
+#include &ltstdio.h&gt
 
-	<div class="jumbotron text-center">
-	<div class="container">
-	<h1 class="jumbotron-heading">Week 2</h1>
-				
-              
-    <!--
-    <div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
-    <div class="container d-flex justify-content-between">
-    <strong class="navbar-brand d-flex">hello_world.c</strong>
-    <a href="hello_world.c" download>
-    <strong class="navbar-brand d-flex">download</strong>
-    </a>
-    </div>
-    </div>
+int main(void) {
+    
+    return 0;
+}
+</div></code></pre>
 
-    <pre style="text-align: left; font-size: 15px"><code><div class="container">
-    </div></code></pre>
-               -->
-				</div>
-			</div>
+<h4>More I/O</h4>
 
-    	</main>
+<p>
+Here the "formatted" comes into <code>printf()</code> and <code>scanf()</code>.
+Within the quotation marks you can put format specifiers, and then the variable/s you want to print out / read in go afterwards.
+<p></p>
+Format specifiers start with a <code>%</code>. The ones you will see the most are <code>%d</code> which is an integer, and <code>%lf</code> which is a double (which is a "long float", a float being a number with decimal points). You can look at the manual page for scanf (<code>man scanf</code>) to see some more format specifiers.
+</p>
+
+<p>
+Note that in <code>scanf()</code> you need to put an ampersand <code>&</code> before the name of the variable you are reading into.
+</p>
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">rectangle.c</strong>
+<a href="retangle.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a>
+</div>
+</div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: Wed09Sitar and Wed13Kora
+// Date created: 11-06-2019
+// A very simple C program
+// Given two edges, print the area of the rectangle
+
+#include &ltstdio.h&gt
+
+int main(void) {
+    
+    return 0;
+}
+</div></code></pre>
+
+</div>
 
 
-    	<footer class="text-muted">
-      	<div class="container">
-       		 <p class="float-right">
-          		<a href="#">Back to top</a>
-        		</p>
-      	</div>
-    	</footer>
 
-	</body>
+
+</div></div>
+</main>
+
+
+<footer class="text-muted"><div class="container">
+<p class="float-right"><a href="#">Back to top</a></p>
+</div></footer>
+
+</body>
 
 </html>
 

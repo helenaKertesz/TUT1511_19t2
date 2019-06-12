@@ -80,6 +80,20 @@ You can also chain many if statements together using <code>else if()</code>. The
 #include &ltstdio.h&gt
 
 int main(void) {
+    int mark;
+    printf("Please enter your mark: ");
+    scanf("%d", &mark);
+
+    if( mark &lt 0 || mark &gt 100 ){
+        printf("ERROR\n");
+    } else if( mark &gt= 50 ){ 
+        // we don't need to check &gt 0 because that was done in the last if
+        // we only get to this part if the first if condition was false
+        printf("PASS\n");
+    } else {
+        // don't need to check anything because the last possible case is &gt= 0 and &lt 50
+        printf("FAIL\n");
+    }
     
     return 0;
 }
@@ -115,6 +129,14 @@ Note that in <code>scanf()</code> you need to put an ampersand <code>&</code> be
 #include &ltstdio.h&gt
 
 int main(void) {
+
+    printf("Please enter the width and length of the rectangle: ");
+    scanf("%d %d", &width, &length ); // assuming the user inputs space separated numbers
+
+    area = width * length; 
+    // this could be done directly in the printf but is clearer if we store it in a separate variable
+
+    printf("Area = %d\n", area);
     
     return 0;
 }

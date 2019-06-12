@@ -1,70 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>COMP1511 19t2 wk03</title>
+<head>
+<meta charset="utf-8">
+<title>COMP1511 19t2 wk03</title>
 
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-			crossorigin="anonymous">
-    	<!-- Custom styles for this template -->
-    	<link href="album.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    	<!-- Syntax higlighting -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad()</script>  
+<!-- Custom styles for this template -->
+<link href="album.css" rel="stylesheet">
 
+<!-- Syntax higlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>  
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>19t2</strong>
-          </a>
-        </div>
-      </div>
+<!--  -->
+<div class="navbar navbar-dark bg-dark box-shadow">
+<div class="container d-flex justify-content-between">
+<a href="#" class="navbar-brand d-flex align-items-center">
+<strong>19t2</strong>
+</a>
+</div>
+</div>
 
-	<main role="main">
+<main role="main">
 
-	<div class="jumbotron text-center">
-	<div class="container">
-	<h1 class="jumbotron-heading">Week 3</h1>
-				
-              
-    <!--
-    <div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
-    <div class="container d-flex justify-content-between">
-    <strong class="navbar-brand d-flex">hello_world.c</strong>
-    <a href="hello_world.c" download>
-    <strong class="navbar-brand d-flex">download</strong>
-    </a>
-    </div>
-    </div>
+<div class="jumbotron text-center">
+<div class="container">
+<h1 class="jumbotron-heading">Week 3</h1>
+			
 
-    <pre style="text-align: left; font-size: 15px"><code><div class="container">
-    </div></code></pre>
-               -->
-				</div>
-			</div>
-
-    	</main>
+<div class="container text-left bg-light"><br>
 
 
-    	<footer class="text-muted">
-      	<div class="container">
-       		 <p class="float-right">
-          		<a href="#">Back to top</a>
-        		</p>
-      	</div>
-    	</footer>
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">cm2feet.c</strong>
+<a href="cm2feet.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a>
+</div>
+</div>
 
-	</body>
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: wed09-sitar and wed13-kora
+// Date created: 19/06/2019
+// Converts cm to feet
+
+#include &ltstdio.h&gt
+
+int main(void) {
+
+    int heightCm, heightFeet;
+
+    printf("Please enter your height in centimeters: ");
+    scanf("%d", &heightCm);
+
+    // TODO
+    
+    return 0;
+}
+</div></code></pre>
+
+<h4>Truncation of <code>int</code>s</h4>
+<p> Since <code>int</code>s cannot store decimal points, if you do maths with them any decimal points will be truncated (chopped off). For example, someone who is 177cm is 5 foot 10 inches, or 5.83 feet. However, since we are using <code>int</code>s the code above would truncate this to 5 feet.</p>
+
+</div> <!-- end of light -->
+
+
+<div class="container text-left bg-light">
+
+<br><h4><code>while()</code> loops</h4>
+
+A <codewhile</code> loops lets you do the same thing multiple times until a condition becomes false, the syntax is:
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">while(/*some boolean statement*/){
+    // everything inside these curly braces will run
+    // over and over until the statement is false
+}
+</div></code></pre>
+
+Make sure that whatever is happening inside the loop will eventually cause the condition to become false or it will run forever (an infinite loop).
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">count42.c</strong>
+<a href="count42.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: wed09-sitar and wed13-kora
+// Date created: 19/06/2019
+// Prints out 1 to 42
+
+#include &ltstdio.h&gt
+
+int main(void) {
+
+    // TODO
+    
+    return 0;
+}
+</div></code></pre>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">count_up.c</strong>
+<a href="count_up.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: wed09-sitar and wed13-kora
+// Date created: 19/06/2019
+// Count up to a specified point
+
+#include &ltstdio.h&gt
+
+int main(void) {
+
+    // TODO
+    
+    return 0;
+}
+</div></code></pre>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">range.c</strong>
+<a href="range.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: wed09-sitar and wed13-kora
+// Date created: 19/06/2019
+// Count out a given range
+
+#include &ltstdio.h&gt
+
+int main(void) {
+
+    // TODO
+    
+    return 0;
+}
+</div></code></pre>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">range7.c</strong>
+<a href="range7.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: wed09-sitar and wed13-kora
+// Date created: 19/06/2019
+// Count out all numbers divisible by 7 in a given range
+
+#include &ltstdio.h&gt
+
+int main(void) {
+
+    // TODO
+    
+    return 0;
+}
+</div></code></pre>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">range_divisible.c</strong>
+<a href="range_divisible.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: wed09-sitar and wed13-kora
+// Date created: 19/06/2019
+// Count out all numbers divisible by a given number in a given range
+
+#include &ltstdio.h&gt
+
+int main(void) {
+
+    // TODO
+    
+    return 0;
+}
+</div></code></pre>
+
+<br></div> <!-- end of light -->
+
+
+</div></div>
+</main>
+
+
+<footer class="text-muted"><div class="container">
+<p class="float-right"><a href="#">Back to top</a></p>
+</div></footer>
+
+</body>
 
 </html>
 

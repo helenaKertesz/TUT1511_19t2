@@ -1,70 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>COMP1511 19t2 wk04</title>
+<head>
+<meta charset="utf-8">
+<title>COMP1511 19t2 wk04</title>
 
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-			crossorigin="anonymous">
-    	<!-- Custom styles for this template -->
-    	<link href="album.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    	<!-- Syntax higlighting -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad()</script>  
+<!-- Custom styles for this template -->
+<link href="album.css" rel="stylesheet">
 
+<!-- Syntax higlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>  
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>19t2</strong>
-          </a>
-        </div>
-      </div>
+<!--  -->
+<div class="navbar navbar-dark bg-dark box-shadow">
+<div class="container d-flex justify-content-between">
+<a href="#" class="navbar-brand d-flex align-items-center">
+<strong>19t2</strong>
+</a>
+</div>
+</div>
 
-	<main role="main">
+<main role="main">
 
-	<div class="jumbotron text-center">
-	<div class="container">
-	<h1 class="jumbotron-heading">Week 4</h1>
-				
-              
-    <!--
-    <div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
-    <div class="container d-flex justify-content-between">
-    <strong class="navbar-brand d-flex">hello_world.c</strong>
-    <a href="hello_world.c" download>
-    <strong class="navbar-brand d-flex">download</strong>
-    </a>
-    </div>
-    </div>
-
-    <pre style="text-align: left; font-size: 15px"><code><div class="container">
-    </div></code></pre>
-               -->
-				</div>
-			</div>
-
-    	</main>
+<div class="jumbotron text-center">
+<div class="container">
+<h1 class="jumbotron-heading">Week 4</h1>
+		
 
 
-    	<footer class="text-muted">
-      	<div class="container">
-       		 <p class="float-right">
-          		<a href="#">Back to top</a>
-        		</p>
-      	</div>
-    	</footer>
 
-	</body>
+
+
+
+
+
+
+<div class="container text-left bg-light">
+
+<br><h4>Arrays</h4>
+
+<p>
+You can store many variables of the same type in a certain order in an array. They are created and initialised like so:
+</p>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">int array0[7]; // create an uninitialised array with 7 elements
+int array1[5] = {1, 2, 3, 4, 5}; // set each element
+int array2[20] = {0}; // set entire array to 0
+</div></code></pre>
+
+<p>
+You can use <code>while()</code> loops to iterate over an array.<br>
+Note that arrays are index from 0, so to access the first element of an array (let's call it arr), you would do <code>arr[0]</code>, the fifth would be <code>arr[4]</code> etc...
+</p>
+
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">array_squares.c</strong>
+<a href="array_squares.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: wed09-sitar and wed13-kora
+// Date created: 26/06/2019
+// Create an array where each element is
+// the square of the index
+
+#include &ltstdio.h&gt
+
+int main(){
+
+    // create array
+    int squares[15];
+
+    // fill array
+    int i = 0;
+    while( i &lt 15 ){
+        squares[i] = i*i;
+        i++;
+    }
+   
+    // print array
+    i = 0;
+    while( i &lt 15 ){
+        printf("%d\n", squares[i]);
+        i++;
+    }
+
+    return 0;
+}
+</div></code></pre>
+
+</div> <!-- end of light -->
+
+
+
+
+
+
+
+
+
+<div class="container text-left bg-light">
+
+<br><h4>Nested <code>while()</code> loops</h4>
+
+<p>Nested <code>while()</code> loops can be use to print out 2D shapes (and also also useful for iterating over 2D arrays).</p>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">square.c</strong>
+<a href="square.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Print out a square of *'s
+// of a given size
+
+#include &ltstdio.h&gt
+
+int main(void) {
+    int number;
+    int row, col;
+
+    // Obtain input
+    printf("Enter size: ");
+    scanf("%d", &number);
+    
+    row = 0;
+    while (row &lt number) {
+        col = 0;
+        while (col &lt number) {
+            
+            printf("*");
+            col = col + 1;
+        }
+        printf("\n");
+        row = row + 1;
+    }
+
+    return 0;
+}
+</div></code></pre>
+
+<p>
+You can make lots of other fun shapes just by sticking an <code>if</code> statement in there, like so:
+</p>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">triangle.c</strong>
+<a href="triangle.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: Helena Kertesz
+// Date: 26/06/2019
+// Print out a triangle of *'s
+// of a given size
+
+#include &ltstdio.h&gt
+
+int main(void) {
+    int number;
+    int row, col;
+
+    // Obtain input
+    printf("Enter size: ");
+    scanf("%d", &number);
+    
+    row = 0;
+    while (row &lt number) {
+        col = 0;
+        while (col &lt number) {
+           
+            // nearly all 2D shapes can be created
+            // by changing this if statement
+            if( col + row &lt number  ){
+                printf("#");
+            } else {
+                printf("-");
+            }
+
+            col = col + 1;
+        }
+        printf("\n");
+        row = row + 1;
+    }
+
+    return 0;
+}
+</div></code></pre>
+
+
+</div> <!-- end of light -->
+
+
+
+
+
+
+
+
+
+<div class="container text-left bg-light"><br>
+
+<h4>Using <code>scanf()</code>'s return value</h4>
+
+<p><code>scanf()</code> returns the number of items successfully read in. This can be used to repeatedly reading in values one by one.</p>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">scanf.c</strong>
+<a href="scanf.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a>
+</div>
+</div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: Helena Kertesz
+// Date created: 25/06/2019
+// Example for using scanf to read in
+// many items one by one
+
+#include &ltstdio.h&gt
+
+int main(void) {
+
+    int read_in;
+
+    // num_read is the number of things
+    // successfully read in by scanf,
+    // so this line both 
+    int num_read = scanf("%d", &read_in);
+
+    while( num_read == 1 ){
+
+        // print out num of things the previous
+        // scanf read in, as well as printing
+        // the value that was read in
+        printf("num_read: %d\n", num_read);
+        printf("read_in : %d\n", read_in);
+
+        // do a scanf to get the next value
+        num_read = scanf("%d", &read_in);
+    }
+  
+    // this shows the return value in the case
+    // that the while loop was exited
+    printf("num_read: %d\n", num_read);
+    // this will be 0 (nothing read in) if
+    // an incorrect value was given (ie "qwerty")
+    // and -1 if EOF (end of file) was given
+    // by typing CTRL-D
+
+    return 0;
+}
+</div></code></pre>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">scanf_small.c</strong>
+<a href="scanf_small.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a>
+</div>
+</div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: Helena Kertesz
+// Date created: 25/06/2019
+// Example for using scanf to read in many
+// items one by one without having a 
+// separate value for the num items read in
+
+#include &ltstdio.h&gt
+
+int main(void) {
+
+    int read_in;
+
+    // this while condition both conducts a scanf
+    // and checks that the return value is 1
+    while( scanf("%d", &read_in ) == 1 ){
+        printf("read: %d\n", read_in );
+    }
+
+    return 0;
+}
+</div></code></pre>
+
+<p>One possible use case for this is to detect and print out the number of integers a user has entered in a row</p>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">read_ints.c</strong>
+<a href="read_ints.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a>
+</div>
+</div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: Helena Kertesz
+// Date created: 26/06/2019
+// Determine how many ints a user has entered
+
+#include &ltstdio.h&gt
+
+int main(){
+
+    int read;
+    int num_ints = 0;
+
+    while( scanf( "%d", &read ) == 1 ){
+        num_ints++;
+    }
+
+    printf("You entered %d integers\n", num_ints);
+
+    return 0;
+}
+</div></code></pre>
+
+<br></div> <!-- end of light -->
+
+
+
+
+
+
+
+
+</div></div>
+</main>
+
+
+<footer class="text-muted"><div class="container">
+<p class="float-right"><a href="#">Back to top</a></p>
+</div></footer>
+
+</body>
 
 </html>
 

@@ -4,6 +4,8 @@
 
 #include <stdio.h>
 
+#define CM_IN_FOOT 30.48
+
 int main(void) {
 
     int heightCm, heightFeet;
@@ -11,7 +13,9 @@ int main(void) {
     printf("Please enter your height in centimeters: ");
     scanf("%d", &heightCm);
 
-    // TODO
+    heightFeet = heightCm / CM_IN_FOOT;
+
+    printf("You are %d feet tall\n", heightFeet );
     
     return 0;
 }

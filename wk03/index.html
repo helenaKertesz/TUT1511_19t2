@@ -54,6 +54,8 @@
 
 #include &ltstdio.h&gt
 
+#define CM_IN_FOOT 30.48
+
 int main(void) {
 
     int heightCm, heightFeet;
@@ -61,7 +63,9 @@ int main(void) {
     printf("Please enter your height in centimeters: ");
     scanf("%d", &heightCm);
 
-    // TODO
+    heightFeet = heightCm / CM_IN_FOOT;
+
+    printf("You are %d feet tall\n", heightFeet );
     
     return 0;
 }
@@ -103,7 +107,11 @@ Make sure that whatever is happening inside the loop will eventually cause the c
 
 int main(void) {
 
-    // TODO
+    int i = 1;
+    while( i &lt= 42 ){
+        printf("%d\n", i );
+        i++;
+    }
     
     return 0;
 }
@@ -125,8 +133,17 @@ int main(void) {
 
 int main(void) {
 
-    // TODO
-    
+    int i = 0;
+    int finish;
+
+    printf("Enter finish: ");
+    scanf("%d", &finish );
+
+    while( i &lt= finish ){
+        printf("%d\n", i );
+        i++;
+    }
+
     return 0;
 }
 </div></code></pre>
@@ -147,7 +164,19 @@ int main(void) {
 
 int main(void) {
 
-    // TODO
+    int start, finish;
+
+    printf("Enter start: ");
+    scanf("%d", &start );
+    printf("Enter finish: ");
+    scanf("%d", &finish );
+
+    int num = start;
+
+    while( num &lt= finish ){
+        printf("%d\n", num );
+        num++;
+    }
     
     return 0;
 }
@@ -169,33 +198,26 @@ int main(void) {
 
 int main(void) {
 
-    // TODO
+    int start, finish;
+
+    printf("Enter start: ");
+    scanf("%d", &start );
+    printf("Enter finish: ");
+    scanf("%d", &finish );
+
+    int num = start;
+
+    while( num &lt= finish ){
+        if( num % 7 == 0 ){
+            printf("%d\n", num );
+        }
+        num++;
+    }
     
     return 0;
 }
 </div></code></pre>
 
-<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
-<div class="container d-flex justify-content-between">
-<strong class="navbar-brand d-flex">range_divisible.c</strong>
-<a href="range_divisible.c" download>
-<strong class="navbar-brand d-flex">download</strong>
-</a></div></div>
-
-<pre style="text-align: left; font-size: 15px"><code><div class="container">
-// Author: wed09-sitar and wed13-kora
-// Date created: 19/06/2019
-// Count out all numbers divisible by a given number in a given range
-
-#include &ltstdio.h&gt
-
-int main(void) {
-
-    // TODO
-    
-    return 0;
-}
-</div></code></pre>
 
 <br></div> <!-- end of light -->
 

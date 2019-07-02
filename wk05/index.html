@@ -1,70 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>COMP1511 19t2 wk05</title>
+<head>
+<meta charset="utf-8">
+<title>COMP1511 19t2 wk05</title>
 
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-			crossorigin="anonymous">
-    	<!-- Custom styles for this template -->
-    	<link href="album.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    	<!-- Syntax higlighting -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad()</script>  
+<!-- Custom styles for this template -->
+<link href="album.css" rel="stylesheet">
 
+<!-- Syntax higlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>  
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>19t2</strong>
-          </a>
-        </div>
-      </div>
+<!--  -->
+<div class="navbar navbar-dark bg-dark box-shadow">
+<div class="container d-flex justify-content-between">
+<a href="#" class="navbar-brand d-flex align-items-center">
+<strong>19t2</strong>
+</a>
+</div>
+</div>
 
-	<main role="main">
+<main role="main">
 
-	<div class="jumbotron text-center">
-	<div class="container">
-	<h1 class="jumbotron-heading">Week 5</h1>
-				
-              
-    <!--
-    <div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
-    <div class="container d-flex justify-content-between">
-    <strong class="navbar-brand d-flex">hello_world.c</strong>
-    <a href="hello_world.c" download>
-    <strong class="navbar-brand d-flex">download</strong>
-    </a>
-    </div>
-    </div>
-
-    <pre style="text-align: left; font-size: 15px"><code><div class="container">
-    </div></code></pre>
-               -->
-				</div>
-			</div>
-
-    	</main>
+<div class="jumbotron text-center">
+<div class="container">
+<h1 class="jumbotron-heading">Week 5</h1>
+		
 
 
-    	<footer class="text-muted">
-      	<div class="container">
-       		 <p class="float-right">
-          		<a href="#">Back to top</a>
-        		</p>
-      	</div>
-    	</footer>
 
-	</body>
+
+
+
+
+
+
+<div class="container text-left bg-light">
+
+<br><h4>Functions</h4>
+
+<p>
+</p>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">&ltreturn type&gt &gtfunction name&gt ( &ltinput type&gt&ltinput name&gt ... ){
+    // content of function
+    return &ltreturn value&gt
+}
+</div></code></pre>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">add.c</strong>
+<a href="add.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: Helena Kertesz
+// Date created: 26/06/2019
+// Use a function to add two numbers
+
+#include &ltstdio.h&gt
+
+// forward declare the function
+int add( int a, int b );
+
+int main(void){
+    int in1, in2;
+    printf("Input two integers to add: ");
+    scanf("%d %d", &in1, &in2 );
+
+    int result = add(in1, in2);
+    
+    printf("%d + %d = %d\n", in1, in2, result);
+
+    return 0;
+}
+
+
+// This function adds two integers
+// and returns the result
+int add( int a, int b ){
+    int sum = a + b;
+    return sum;
+}
+</div></code></pre>
+
+<p>
+You can think of functions as separate rooms with holes connecting them.
+Interpreting the code above, the main function passes copies of its variables
+"in1" and "in2" through the holes to the "add" room. Add calls these numbers
+passed to it "a" and "b". Add cannot see any of the other varaibles in main, 
+only it's own variables - ie "sum". Add then does some maths and passes a copy
+of the result back through the wall to main. Main cannot see any of the variables
+within add, only this result which passed back. It then stores it in it's own
+variable called "result".
+
+</p>
+
+<div><center>
+<img src="function_analogy.png" alt="function wall analogy">
+</center></div>
+
+</div> <!-- end of light -->
+
+
+
+
+
+
+
+</div></div>
+</main>
+
+
+<footer class="text-muted"><div class="container">
+<p class="float-right"><a href="#">Back to top</a></p>
+</div></footer>
+
+</body>
 
 </html>
 

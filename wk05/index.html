@@ -112,6 +112,137 @@ variable called "result".
 
 </div> <!-- end of light -->
 
+<br>
+
+<div class="container text-left bg-light">
+
+<br><h4>Functions and arrays</h4>
+
+<p>
+When you give an array to a function, it is not copied across (passed by value) but its location is given to the function  (passed by reference). This means the function can edit the original array.
+</p>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">array_functions.c</strong>
+<a href="array_functions.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+// Author: Wed09Sitar and Wed13Kora
+// Date created: 03/07/2019
+// Some functions playing with arrays
+// and a main to test
+
+#include &ltstdio.h&gt
+
+void print_array(int n, int array[n]);
+int scanf_array(int n, int array[n]);
+double average(int n, int array[n]);
+
+
+int main(){
+
+    int a1[5] = {1, 2, 3, 4, 5};
+
+    print_array(5, a1);
+    printf("Average is %lf\n", average(5, a1));
+
+    int a2[6];
+    int num_read = scanf_array(6, a2);
+    printf("Read in %d values\n", num_read);
+    print_array(num_read, a2);
+    printf("Average is %lf\n", average(num_read, a2));
+
+    return 0;
+}
+
+void print_array(int n, int array[n]){
+    printf("[ ");
+
+    int i = 0;
+    while( i &lt n ){
+        printf("%d ", array[i]);
+        i++;
+    }
+    
+    printf("]\n");
+}
+
+int scanf_array(int n, int array[n]){
+    
+    printf("Please enter %d integers: ", n );
+    int i = 0;
+    while( i &lt n && scanf("%d", &array[i]) == 1 ){
+        i++;
+    }
+    return i;
+}
+
+double average(int n, int array[n]){
+    int i = 0;
+    double average = 0;
+    while( i &lt n ){
+        average = average + array[i];
+        i++;
+    }
+
+    average = average / n;
+    return average;
+}
+
+</div></code></pre>
+
+<p>
+The following explores how arrays are passed by reference but non-arrays are passed by value. Try and guess what will print out before running it.
+</p>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">variable_scope.c</strong>
+<a href="variable_scope.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+
+#include &ltstdio.h&gt
+
+void myFunct(int c, int arr[] );
+
+int main(){
+
+    int a = 4;
+    int b[3] = {1, 2, 3};
+
+    printf("1. a = %d\n", a);
+    printf("2. b = [%d, %d , %d]\n", b[0], b[1], b[2]);
+
+    myFunct(a, b);
+    
+    printf("8. a = %d\n", a);
+    printf("9. b = [%d, %d , %d]\n", b[0], b[1], b[2]);
+    
+    return 0;
+}
+
+void myFunct(int c, int arr[] ){
+    
+    printf("3. a = %d\n", a);
+    printf("4. c = %d\n", c);
+    printf("5. arr = [%d, %d , %d]\n", arr[0], arr[1], arr[2]);
+
+    c = 7;
+    arr[1] = 4;
+    
+    printf("6. c = %d\n", c);
+    printf("7. arr = [%d, %d , %d]\n", arr[0], arr[1], arr[2]);
+
+}
+</div></code></pre>
+</div> <!-- end of light -->
+
+
+
 
 
 

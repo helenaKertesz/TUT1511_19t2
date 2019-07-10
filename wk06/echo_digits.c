@@ -1,15 +1,26 @@
 #include <stdio.h>
 
-int main( int argc, char argv[][] ){
+int main( int argc, char* argv[] ){
 
-    // char* argv[]
-    // char** argv
+    int arg_count = 1; // start at 2nd argument
+    int char_count = 0;
 
-    int arg_count;
-    int char_count;
+    while( arg_count < argc ){
+        // if I wanted to print out the entire argument
+        // printf("%s\n", argv[arg_count]);
 
-    // TODO
+        char_count = 0;
+        while( argv[arg_count][char_count] != '\0'){
+            if(argv[arg_count][char_count] >= '0' &&
+                    argv[arg_count][char_count] <= '9'){
 
-    printf("\n");
+                printf("%c\n", argv[arg_count][char_count]);
+
+            }
+            char_count++;
+        }
+
+        arg_count++;
+    }
 
 }

@@ -1,70 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>COMP1511 19t2 wk08</title>
+<head>
+<meta charset="utf-8">
+<title>COMP1511 19t2 wk08</title>
 
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-			crossorigin="anonymous">
-    	<!-- Custom styles for this template -->
-    	<link href="album.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    	<!-- Syntax higlighting -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad()</script>  
+<!-- Custom styles for this template -->
+<link href="album.css" rel="stylesheet">
 
+<!-- Syntax higlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>  
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>19t2</strong>
-          </a>
-        </div>
-      </div>
+<!--  -->
+<div class="navbar navbar-dark bg-dark box-shadow">
+<div class="container d-flex justify-content-between">
+<a href="#" class="navbar-brand d-flex align-items-center">
+<strong>19t2</strong>
+</a>
+</div>
+</div>
 
-	<main role="main">
+<main role="main">
 
-	<div class="jumbotron text-center">
-	<div class="container">
-	<h1 class="jumbotron-heading">Week 8</h1>
-				
-              
-    <!--
-    <div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
-    <div class="container d-flex justify-content-between">
-    <strong class="navbar-brand d-flex">hello_world.c</strong>
-    <a href="hello_world.c" download>
-    <strong class="navbar-brand d-flex">download</strong>
-    </a>
-    </div>
-    </div>
-
-    <pre style="text-align: left; font-size: 15px"><code><div class="container">
-    </div></code></pre>
-               -->
-				</div>
-			</div>
-
-    	</main>
+<div class="jumbotron text-center">
+<div class="container">
+<h1 class="jumbotron-heading">Week 8</h1>
+		
 
 
-    	<footer class="text-muted">
-      	<div class="container">
-       		 <p class="float-right">
-          		<a href="#">Back to top</a>
-        		</p>
-      	</div>
-    	</footer>
 
-	</body>
+
+
+
+
+
+
+<div class="container text-left bg-light">
+
+<br><h4>Linked Lists</h4>
+
+<p>
+</p>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">linkedList.h</strong>
+<a href="linkedList.h" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+struct overall {
+    struct node *start;
+    struct node *end;
+};
+
+struct node {
+    int data;
+    struct node *next;
+};
+
+struct node *new_node(int data);
+void insert_at_front(struct overall *o, int data);
+void insert_before_end(struct overall *o, int data);
+struct overall* new_list();
+void print_list (struct overall *o);
+</div></code></pre>
+
+<div class="navbar navbar-dark bg-dark box-shadow" style="margin-bottom: 0px">
+<div class="container d-flex justify-content-between">
+<strong class="navbar-brand d-flex">linkedList.c</strong>
+<a href="linkedList.c" download>
+<strong class="navbar-brand d-flex">download</strong>
+</a></div></div>
+
+<pre style="text-align: left; font-size: 15px"><code><div class="container">
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+
+#include "linkedList.h"
+
+int main(){
+    struct overall* my_list = new_list();
+
+    print_list(my_list);
+    insert_at_front(my_list, 1);
+    print_list(my_list);
+
+    insert_at_front(my_list, 2);
+    print_list(my_list);
+
+    insert_before_end(my_list, 3);
+    print_list(my_list);
+}
+
+// Create a node
+struct node *new_node(int data) {
+    struct node* node = malloc(sizeof(struct node));
+    if( node == NULL){
+        fprintf(stderr, "Malloc failed\n");
+        exit(1);
+    }
+    node -&gt data = data;
+    node -&gt next = NULL;
+    return node;
+}
+
+// Create and add a node at the start of the list
+void insert_at_front(struct overall *o, int data) {
+    struct node* node = new_node(data);
+    node -&gt next = o -&gt start;
+    o -&gt start = node;
+
+    if( o -&gt end == NULL){
+        o -&gt end = node;
+    }
+}
+
+// Create and add a node before the last element
+// if the list is empty simply insert
+void insert_before_end(struct overall *o, int data) {
+    struct node* node = new_node(data);
+
+    if( o -&gt start == NULL ){
+        o -&gt start = node;
+        o -&gt end = node;
+    } else {
+
+        struct node* curr = o -&gt start;
+        while( curr -&gt next != o -&gt end ){
+            curr = curr -&gt next;
+        }
+
+        curr -&gt next = node;
+        node -&gt next = o -&gt end;
+    }
+}
+
+struct overall* new_list(){
+    struct overall* new_list = malloc(sizeof(struct overall));
+    if( new_list == NULL){
+        fprintf(stderr, "Malloc failed\n");
+        exit(1);
+    }
+    new_list -&gt start = NULL;
+    new_list -&gt end = NULL;
+    return new_list;
+}
+
+void print_list (struct overall *o){
+    struct node* curr = o -&gt start;
+    while( curr != NULL ){
+        printf("%d -&gt ", curr -&gt data);
+        curr = curr -&gt next;
+    }
+    printf("X\n");
+}
+</div></code></pre><br>
+
+</div> <!-- end of light -->
+
+
+
+
+
+
+
+</div></div>
+</main>
+
+
+<footer class="text-muted"><div class="container">
+<p class="float-right"><a href="#">Back to top</a></p>
+</div></footer>
+
+</body>
 
 </html>
 

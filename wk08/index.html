@@ -104,7 +104,9 @@ int main(){
 
 // Create a node
 struct node *new_node(int data) {
-    struct node* node = malloc(sizeof(struct node));
+    struct node* node = malloc(sizeof(struct node));    
+
+    // malloc will return NULL if it failed
     if( node == NULL){
         fprintf(stderr, "Malloc failed\n");
         exit(1);
@@ -120,6 +122,9 @@ void insert_at_front(struct overall *o, int data) {
     node -&gt next = o -&gt start;
     o -&gt start = node;
 
+    // if the list was previously empty
+    // you should made the end point to
+    // this new node as well
     if( o -&gt end == NULL){
         o -&gt end = node;
     }
@@ -130,12 +135,17 @@ void insert_at_front(struct overall *o, int data) {
 void insert_before_end(struct overall *o, int data) {
     struct node* node = new_node(data);
 
+    // if you are inserting into an empty list
+    // nust make start and end point to the new node
     if( o -&gt start == NULL ){
         o -&gt start = node;
         o -&gt end = node;
     } else {
 
         struct node* curr = o -&gt start;
+
+        // keep itterating until curr points to the
+        // second last node
         while( curr -&gt next != o -&gt end ){
             curr = curr -&gt next;
         }
@@ -158,6 +168,9 @@ struct overall* new_list(){
 
 void print_list (struct overall *o){
     struct node* curr = o -&gt start;
+
+    // keep going until curr goes past the
+    // end of the list
     while( curr != NULL ){
         printf("%d -&gt ", curr -&gt data);
         curr = curr -&gt next;
